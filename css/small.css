@@ -1,0 +1,1185 @@
+/*
+Dark Blue: #00598C
+Background: #F2F2F2 (Light Gray) for the main website background.
+Text: #000000 (Black) for main text for readability.
+Headings: #007DC5 (Dark Blue) for headings and titles to create hierarchy and stand out.
+Buttons and Calls to Action: #F7CA44 (Light Orange) to grab attention and encourage user interaction.
+Highlights: #007DC5 (Dark Blue) or #F7CA44 (Light Orange) for highlighting important information or areas.
+font-family: "Rubik", sans-serif;
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+    color: #222;
+    font-family: "Cairo", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    line-height: 1.5;
+    background-color: #F2F2F2;
+}
+
+/* ***** Portrait phones ***** */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* ***** Header ***** */
+.header {
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    height: 6rem;
+    width: inherit;
+    background-color: #FFF;
+    border-bottom: solid 1px #007DC5;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 1px 4px #77777780;
+}
+
+#logo,
+.footer .ft-logo {
+    display: block;
+    height: 4rem;
+    width: 6.3rem;
+    background: url(../images/manara-logo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+}
+
+.logo span {
+    display: none;
+}
+
+/* ***** Header icons start ***** */
+#header-icons {
+    display: flex;
+}
+
+#contact-us,
+#search,
+#menu {
+    display: block;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 8px;
+    margin-right: 1rem;
+    background-color: #F2F2F2;
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: background-image 0.5s ease-in-out;
+    transition: background-color 0.5s ease-in-out;
+}
+
+#contact-us {
+    background-image: url("../images/SVGs/contact_us.svg");
+}
+
+#search {
+    background-image: url("../images/SVGs/magnifier.svg");
+}
+
+#menu {
+    background-image: url("../images/SVGs/bars.svg");
+}
+
+#contact-us:active,
+#search:active,
+#menu:active {
+    background-color: #007DC5;
+    background-size: 50%;
+}
+
+#contact-us:active {
+    background-image: url("../images/SVGs/contact-us-active.svg");
+}
+
+#search:active {
+    background-image: url("../images/SVGs/magnifier-active.svg");
+}
+
+#menu:active {
+    background-image: url("../images/SVGs/bars-active.svg")
+}
+
+#contact-us span,
+#search span,
+#menu span {
+    display: none;
+}
+
+.popup {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 1rem 3rem 5rem;
+    display: none;
+    box-shadow: -1px 1px 3px #77777780;
+    grid-gap: 2rem 8rem;
+    grid-template-areas:
+        "popup-top close"
+        "call call"
+        "message message";
+        opacity: 0;
+        animation: fadeIn 0.5s ease-in-out forwards;
+    transition: 0.5s ease-in-out;
+}
+
+.popup h3 {
+    grid-area: popup-top;
+    text-align: right;
+    font-size: 2rem;
+    line-height: 4;
+    border-bottom: 1px solid #007DC5;
+}
+
+#close {
+    grid-area: close;
+    height: 100%;
+    background: #FFF url("../images/SVGs/xmark.svg");
+    background-repeat: no-repeat;
+    background-position: 0% 50%;
+    background-size: contain;
+}
+
+.popup h4 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.popup ul {
+    display: flex;
+}
+
+#call {
+    grid-area: call;
+    padding: 1rem;
+    text-align: center;
+}
+
+#message {
+    grid-area: message;
+    padding: 1rem;
+    text-align: center;
+}
+
+.popup li {
+    list-style: none;
+    display: block;
+    height: 5rem;
+    width: 5rem;
+    margin: 2rem 0 0 2rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50%;
+}
+
+#call li:nth-of-type(1) {
+    background-image: url("../images/SVGs/mobile-1.svg");
+}
+
+#call li:nth-of-type(2) {
+    background-image: url("../images/SVGs/phone.svg");
+}
+
+#call li:nth-of-type(3) {
+    background-image: url("../images/SVGs/mobile-2.svg");
+    margin-left: 0;
+}
+
+#message li:nth-of-type(1) {
+    background-image: url("../images/SVGs/sms.svg");
+}
+
+#message li:nth-of-type(2) {
+    background-image: url("../images/SVGs/whatsapp.svg");
+}
+
+#message li:nth-of-type(3) {
+    background-image: url("../images/SVGs/messenger.svg");
+    margin-left: 0;
+}
+
+.popup li a {
+    font-size: 1rem;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.popup li span {
+    display: none;
+}
+
+/* ***** Header icons end ***** */
+
+/*input#searchToggle {
+    display: none;
+}
+
+input#searchToggle~.searchToggleLabel {
+    position: relative;
+    padding: 0.25rem;
+    width: 4rem;
+    height: 4rem;
+    background: url('../images/SVGs/magnifier.svg');
+    background-repeat: no-repeat;
+    background-size: 2rem;
+    background-position: 50% 50%;
+    border-radius: 4px;
+    margin-right: auto;
+    margin-left: 1.4rem;
+    cursor: pointer;
+    order: 4;
+}
+
+input#searchToggle~.searchToggleLabel:active {
+    background-color: #F2F2F2;
+}
+
+#searchToggle:checked~.searchToggleLabel {
+    margin-right: 0;
+    border: 1px solid #007DC5;
+    border-right: 0;
+    background: #FFF url('../images/SVGs/xmark.svg');
+    background-repeat: no-repeat;
+    background-size: 2rem;
+    background-position: 50% 50%;
+    cursor: pointer;
+}
+
+#searchToggle:checked~.search {
+    display: block;
+}
+
+.search {
+    display: none;
+    flex-grow: 2;
+    height: 4rem;
+    order: 2;
+    transition: 0.5s ease-in-out;
+}
+
+.search input {
+    height: 100%;
+    width: 100%;
+    padding: 0 1.8rem;
+    border: 1px solid #007DC5;
+    border-left: 0;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.search input,
+.search input::placeholder {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.search input::placeholder {
+    color: #007DC5;
+}
+
+.search-btn {
+    display: none;
+}*/
+
+/* ***** Navigation bar Start ***** */
+/* input#navToggle {
+    display: none;
+}
+
+input#navToggle~.navToggleLabel {
+    position: relative;
+    padding: 0.25rem;
+    width: 4rem;
+    height: 4rem;
+    background: url("../images/SVGs/bars.svg");
+    background-repeat: no-repeat;
+    background-size: 2rem;
+    background-position: 50% 50%;
+    cursor: pointer;
+    border-radius: 4px;
+    order: 4;
+}
+
+input#navToggle~.navToggleLabel:active {
+    background-color: #F2F2F2;
+}
+
+#navToggle:checked~.navToggleLabel {
+    margin-right: 0;
+    background: #007DC5 url('../images/SVGs/bars-active.svg');
+    background-repeat: no-repeat;
+    background-size: 2rem;
+    background-position: 50% 50%;
+    cursor: pointer;
+}
+
+#navToggle:checked~.navbar {
+    left: 0;
+}
+*/
+.navbar {
+    position: absolute;
+    z-index: -1;
+    top: 6rem;
+    left: -999px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    transition: 0.3s ease-in-out;
+}
+
+.navbar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    height: 100vh;
+    width: inherit;
+    background-color: #FFF;
+    background-size: cover;
+}
+
+.navbar ul {
+    list-style-type: none;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.navbar ul li {
+    border-bottom: 1px solid #007DC5;
+    transition: background-color 0.5s ease-in-out;
+    transition: border 0.5s ease-in-out;
+}
+
+.navbar ul li:nth-of-type(4) {
+    border: 0;
+}
+
+.navbar ul li.contact {
+    border: 1px solid #007DC5;
+}
+
+.navbar ul li a {
+    display: block;
+    text-decoration: none;
+    width: 100%;
+    padding: 1.7rem 1rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.15;
+}
+
+.navbar ul li:active,
+.navbar ul li.active {
+    background: #F2F2F2;
+}
+
+/* ***** Navigation bar end ***** */
+
+/* ***** Main ***** */
+.main {
+    margin-top: 6rem;
+    width: 100%;
+    height: 28rem;
+    background: linear-gradient(to left, #00598C 0%, #00598C 40%, transparent 60%), url("../images/BGs/training-courses-small.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    align-items: center;
+    padding: 0 3rem;
+}
+
+.main .page-title span {
+    color: #FFF;
+    font-size: 5rem;
+    font-weight: 700;
+}
+
+.main h2 span:last-child {
+    display: none;
+}
+
+.card-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 4.5rem 2rem 0;
+}
+
+.section-title {
+    font-size: 2.3rem;
+    font-weight: 400;
+    margin-bottom: 1.6rem;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+}
+
+.card {
+    border-radius: 8px;
+    background-color: #FFF;
+    padding: 1rem;
+    box-shadow: -1px 1px 3px #77777780;
+    opacity: 0;
+    transform: scale(1);
+    transition: 0.5s ease-in-out;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.fade-out {
+    animation: fadeOut 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.lg-hidden,
+.pr-hidden,
+.gr-hidden {
+    display: none;
+}
+
+.card:nth-of-type(4).lg-hidden,
+.card:nth-of-type(4).pr-hidden,
+.card:nth-of-type(4).gr-hidden {
+    display: block;
+}
+
+.card-img {
+    display: block;
+    width: 100%;
+    height: 16rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+}
+
+.pr-card-1 {
+    background-image: url('../images/cards/python_l1.png');
+}
+
+.pr-card-2 {
+    background-image: url('../images/cards/Learn-Linux.png');
+}
+
+.pr-card-3 {
+    background-image: url('../images/cards/intro-to-computer-programming.jpg');
+}
+
+.pr-card-4 {
+    background-image: url('../images/cards/Python-Programming.png');
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    padding-right: 0.8rem;
+    padding-left: 0.8rem;
+}
+
+.card-img span {
+    display: none;
+}
+
+.card-title {
+    display: block;
+    width: 100%;
+    height: 4rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin: 2rem 0;
+}
+
+.card-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.level,
+.hours {
+    display: flex;
+    height: 3rem;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #007DC5;
+    background-repeat: no-repeat;
+    background-size: 1rem;
+    background-position: 100% 50%;
+    padding-right: 1.4rem;
+}
+
+.level {
+    background-image: url("../images/SVGs/beginner.svg");
+}
+
+.hours {
+    background-image: url("../images/SVGs/clock.svg");
+}
+
+.card:nth-of-type(4) .level {
+    background-image: url("../images/SVGs/intermediate.svg");
+}
+
+.more {
+    display: block;
+    padding: 0.6rem 1.8rem;
+    margin-top: 2rem;
+    align-self: flex-start;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background-color: #FFF;
+    box-shadow: -1px 1px 2px #77777780;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.more:active {
+    background-color: #007DC5;
+    color: #FFF;
+}
+
+/* ----- Footer -----*/
+.footer {
+    width: 100%;
+    background-color: #00598C;
+    padding: 2.6rem 2rem 1.4rem;
+    margin-top: 4.5rem;
+    font-size: 1.3rem;
+    display: grid;
+    align-items: start;
+    gap: 2rem;
+    grid-template-areas: "logo"
+        "contact-data"
+        "departments"
+        "categories"
+        "copyrights"
+        "social-media";
+}
+
+.footer .ft-logo {
+    grid-area: logo;
+    display: block;
+    order: 1;
+    align-self: start;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+.footer .ft-logo span {
+    display: none;
+}
+
+.footer .contact-data {
+    grid-area: contact-data:
+}
+
+.footer .contact-data li {
+    display: block;
+    height: 3rem;
+    line-height: 3rem;
+    width: 100%;
+    padding-right: 3rem;
+    background-repeat: no-repeat;
+    background-size: 2.4rem;
+    background-position: 100% 50%;
+    color: #FFF;
+}
+
+.footer .contact-data li a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+.footer .contact-data .address {
+    background-image: url("../images/SVGs/location.svg");
+}
+
+.footer .contact-data .mobile {
+    background-image: url("../images/SVGs/mobile-ft.svg");
+}
+
+.footer .contact-data .phone {
+    background-image: url("../images/SVGs/phone-ft.svg");
+}
+
+.footer .departments {
+    grid-area: departments;
+}
+
+.footer .categories {
+    grid-area: categories;
+}
+
+.footer .departments h4,
+.footer .categories h4 {
+    font-size: 1.4rem;
+    color: #FFF;
+    margin-bottom: 0.6rem;
+}
+
+.footer .departments ul,
+.footer .categories ul {
+    list-style: none;
+}
+
+.footer .departments a,
+.footer .categories a {
+    display: inline-block;
+    color: #FFF;
+    text-decoration: none;
+    height: 2rem;
+}
+
+.footer .social-media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: social-media;
+
+}
+
+.footer .social-media a {
+    margin-left: 1.8rem;
+    display: block;
+    height: 2.4rem;
+    width: 2.4rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.footer .social-media a span {
+    display: none;
+}
+
+.footer .social-media .facebook {
+    background-image: url("../images/SVGs/facebook.svg");
+}
+
+.footer .social-media .messenger {
+    background-image: url("../images/SVGs/messenger-ft.svg");
+}
+
+.footer .social-media .whatsapp {
+    background-image: url("..//images/SVGs/whatsapp-ft.svg");
+}
+
+.footer .copyrights {
+    grid-area: copyrights;
+    border-top: solid 1px #007DC5;
+    padding-top: 1.4rem;
+    color: #FFF;
+}
+
+.footer .copyrights a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+
+/* ***** Small Portrait Phones ***** */
+@media screen and (max-width: 430px) {
+    html {
+        font-size: 8px;
+    }
+
+    .header {
+        height: 8rem;
+    }
+
+    .navbar {
+        top: 8rem;
+    }
+
+    .navbar ul li a {
+        font-size: 1.7rem;
+    }
+
+    .main {
+        margin-top: 8rem;
+        background: linear-gradient(to left, #00598C 0%, #00598C 40%, transparent 60%), url("../images/BGs/training-courses-xsmall.jpg");
+        background-size: contain;
+    }
+
+    .main .page-title span {
+        font-size: 4rem;
+    }
+}
+
+/* ***** Landscape phones ***** */
+@media screen and (min-width: 576px) {
+
+    .header {
+        height: 8rem;
+        padding: 0 2.4rem;
+    }
+
+    .navbar {
+        top: 8rem;
+    }
+
+    .navbar ul li a {
+        font-size: 1.4rem;
+    }
+
+    .main {
+        margin-top: 8rem;
+    }
+
+    .main .page-title span {
+        font-size: 5.6rem;
+    }
+
+    .card-section {
+        padding: 4rem 2.4rem 0;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.2rem 2rem;
+    }
+
+    .card-title {
+        font-size: 1.6rem;
+    }
+
+    .more {
+        margin-top: 2.2rem;
+    }
+
+    .footer {
+        padding: 3rem 2.4rem 1.4rem;
+        gap: 2.6rem;
+        grid-template-areas: "logo contact-data"
+            "departments categories"
+            "copyrights social-media";
+    }
+
+    .footer .social-media {
+        justify-content: end;
+        border-top: 1px solid #007DC5;
+        padding-top: 1.4rem;
+    }
+}
+
+/* ***** Tablets ***** */
+@media screen and (min-width: 768px) {
+
+    .header {
+        padding: 0 3rem;
+    }
+
+    .navbar ul li a {
+        font-size: 1.6rem;
+        padding: 2rem 0.5rem;
+    }
+
+    .popup {
+        top: 50%;
+        grid-template-areas:
+            "popup-top close"
+            "call message";
+    }
+
+    #close {
+        background-size: 10%;
+    }
+
+    .main {
+        height: 48.5rem;
+        background: linear-gradient(to left, #00598C 0%, #00598C 40%, transparent 60%), url("../images/BGs/training-courses-768.jpg");
+        padding: 0 5rem;
+    }
+
+    .main .page-title span {
+        font-size: 6rem;
+    }
+
+    .card-section {
+        padding: 5rem 3rem 0;
+    }
+
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.4rem 2.2rem;
+    }
+
+    .card:nth-of-type(4).lg-hidden,
+    .card:nth-of-type(4).pr-hidden,
+    .card:nth-of-type(4).gr-hidden {
+        display: none;
+    }
+
+    .card-title {
+        font-size: 1.4rem;
+    }
+
+    .more {
+        margin-top: 2.4rem;
+    }
+
+    .footer {
+        padding: 3.6rem 3rem 1.4rem;
+        grid-template-areas: "logo contact-data departments categories"
+            "copyrights copyrights social-media social-media";
+    }
+}
+
+/* ***** Laptops ***** */
+@media screen and (min-width: 992px) {
+
+    .header {
+        justify-content: flex-end;
+        align-items: center;
+        height: 5.3rem;
+        padding: 0 3.4rem;
+        border-bottom: 0;
+    }
+
+    .navToggleLabel {
+        display: none;
+    }
+
+    .navbar {
+        position: static;
+        width: auto;
+        margin-right: auto;
+        margin-left: 2rem;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .navbar::after {
+        display: none;
+    }
+
+    .navbar ul {
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    .navbar ul li {
+        border-bottom: 4px solid #FFF;
+        margin-left: 4px;
+    }
+
+    .navbar ul li:hover,
+    .navbar ul li:active,
+    .navbar ul li.active {
+        background: #F2F2F2;
+        border-bottom: 4px solid #007DC5;
+    }
+
+    .navbar ul li a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 12rem;
+        height: 4.7rem;
+        padding: 0;
+        font-size: 1.5rem;
+        line-height: 1.3;
+        transition: color 0.5s ease-in-out;
+    }
+
+    #menu {
+        display: none;
+    }
+
+    #contact-us,
+    #search {
+        width: 4.7rem;
+        height: 4.7rem;
+    }
+
+    #contact-us:hover,
+    #contact-us:active,
+    #search:hover,
+    #search:active {
+        background-color: #007DC5;
+    }
+
+    #contact-us:hover,
+    #contact-us:active {
+        background-image: url("../images/SVGs/contact-us-active.svg");
+    }
+
+    #search:hover,
+    #search:active {
+        background-image: url("../images/SVGs/magnifier-active.svg");
+    }
+
+    /*
+    input#searchToggle~.searchToggleLabel {
+        width: 4.7rem;
+        height: 4.7rem;
+        padding: 0;
+        background: url("../images/SVGs/magnifier.svg") no-repeat center;
+        background-size: 60%;
+        transition: background-image 0.5s ease-in-out;
+        transition: background-color 0.5s ease-in-out;
+    }
+
+    input#searchToggle~.searchToggleLabel:hover,
+    input#searchToggle~.searchToggleLabel:active {
+        background: #007DC5 url("../images/SVGs/magnifier-active.svg") no-repeat center;
+        background-size: 60%;
+    }
+
+    .search {
+        display: none;
+    }
+*/
+    /*
+    .search {
+        display: flex;
+        height: 5.1rem;
+        margin-right: 0;
+        justify-content: stretch;
+        align-items: stretch;
+        order: 3;
+        border: 1px solid #007DC5;
+        border-bottom: 1px solid #007DC5;
+    }
+
+    .search input {
+        border: 0;
+        padding-right: 2rem;
+        padding-bottom: 5px;
+    }
+
+    .search input:focus {
+        border: 0;
+    }
+
+    .search-btn {
+        display: block;
+        padding: 1.2rem 2rem;
+        background: #fff url('../images/SVGs/magnifier.svg');
+        background-repeat: no-repeat;
+        background-size: 1.8rem;
+        background-position: 50% 50%;
+        margin-right: 0;
+        cursor: pointer;
+        border: 0;
+    }
+
+    .search-btn span {
+        display: none;
+    }
+    */
+
+    .main {
+        margin-top: 5.3rem;
+        padding: 0 5rem;
+        height: 54rem;
+        background: linear-gradient(to left, #00598C 0%, #00598C 40%, transparent 60%), url("../images/BGs/training-courses-small.jpg");
+        background-size: contain;
+    }
+
+    .main .page-title span {
+        font-size: 7rem;
+    }
+
+    .main h2 span:first-child {
+        display: none;
+    }
+
+    .main h2 span:last-child {
+        display: block;
+    }
+
+    .card-section {
+        padding: 6rem 3.4rem 0;
+    }
+
+    .section-title {
+        font-size: 2.6rem;
+    }
+
+    .cards {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2.5rem 2.2rem;
+    }
+
+    .card-title {
+        font-size: 1.4rem;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+        transition: 0.75s ease-in-out;
+    }
+
+    .card:nth-of-type(4).lg-hidden,
+    .card:nth-of-type(4).pr-hidden,
+    .card:nth-of-type(4).gr-hidden {
+        display: block;
+    }
+
+    .more {
+        margin-top: 2.5rem;
+        transition: color 0.5s ease-in-out;
+        transition: background-color 0.5s ease-in-out;
+    }
+
+    .more:hover {
+        background-color: #007DC5;
+        color: #FFF;
+    }
+
+    .footer {
+        padding: 3.6rem 3.4rem 1.4rem;
+        margin-top: 6rem;
+    }
+}
+
+/* ***** Laptops and Desktops ***** */
+@media screen and (min-width: 1200px) {
+
+    .header {
+        padding: 0 5rem;
+    }
+
+    .navbar ul li a {
+        width: 13rem;
+    }
+
+    .main {
+        background: linear-gradient(to left, #00598C 0%, #00598C 40%, transparent 60%), url("../images/BGs/training-courses-1200.jpg");
+        padding: 0 7rem;
+    }
+
+    .main .page-title span {
+        font-size: 7.5rem;
+    }
+
+
+    .card-section {
+        padding: 7rem 5rem 0rem;
+    }
+
+    .section-title {
+        font-size: 2.8rem;
+    }
+
+    .cards {
+        gap: 2.6rem 2.3rem;
+    }
+
+    .card-title {
+        font-size: 1.6rem;
+    }
+
+    .more {
+        margin-top: 2.6rem;
+        font-size: 1.3rem;
+        padding: .9rem 1.8rem;
+    }
+
+    .footer {
+        margin-top: 7rem;
+        padding: 3.6rem 5rem 1rem;
+    }
+}
+
+/* ***** Large Laptops and Desktops ***** */
+@media screen and (min-width: 1400px) {
+
+    .container {
+        max-width: 1600px;
+        margin: 0 auto;
+    }
+
+    .header {
+        padding: 0 5rem;
+    }
+
+    .navbar ul li a {
+        width: 11.6rem;
+    }
+
+    .main {
+        background: linear-gradient(to left, #00598C 0%, #00598C 40%, transparent 66%), url("../images/BGs/training-courses-1200.jpg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        padding: 0 5rem;
+    }
+
+    .cards {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 2.8rem 2.3rem;
+    }
+
+    .card:nth-of-type(5).lg-hidden,
+    .card:nth-of-type(5).pr-hidden,
+    .card:nth-of-type(5).gr-hidden {
+        display: block;
+    }
+
+    .more {
+        margin-top: 2.8rem;
+    }
+
+    .footer {
+        padding: 4rem 5rem 1.4rem;
+    }
+}
