@@ -629,7 +629,7 @@ input#navToggle~.navToggleLabel:active {
 }
 
 .footer .contact-data {
-    grid-area: contact-data:
+    grid-area: contact-data;
 }
 
 .footer .contact-data li {
