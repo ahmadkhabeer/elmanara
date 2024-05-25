@@ -611,6 +611,7 @@ input#navToggle~.navToggleLabel:active {
         "contact-data social-media"
         "departments categories"
         "copyrights copyrights";
+    grid-template-columns: 2fr 1fr;
 }
 
 .footer .ft-logo {
@@ -866,7 +867,7 @@ input#navToggle~.navToggleLabel:active {
         padding: 3.6rem 3rem 1.4rem;
         grid-template-areas: "logo logo logo logo"
             "contact-data departments categories social-media"
-            "copyrights copyrights copyrights copyrights";  
+            "copyrights copyrights copyrights copyrights";
     }
 }
 
