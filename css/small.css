@@ -136,12 +136,13 @@ body {
 
 .popup {
     position: fixed;
-    top: 30%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #fff;
     border: 1px solid #ccc;
     padding: 1rem 3rem 5rem;
+    width: 80%;
     display: none;
     box-shadow: -1px 1px 3px #77777780;
     grid-gap: 2rem 8rem;
@@ -820,7 +821,7 @@ input#navToggle~.navToggleLabel:active {
     }
 
     .popup {
-        top: 50%;
+        width: auto;
         grid-template-areas:
             "popup-top close"
             "call message";
