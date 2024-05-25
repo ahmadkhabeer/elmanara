@@ -143,13 +143,15 @@ body {
     border: 1px solid #ccc;
     padding: 1rem 3rem 5rem;
     width: 80%;
-    display: none;
     box-shadow: -1px 1px 3px #77777780;
+    display: none;
     grid-gap: 2rem 8rem;
     grid-template-areas:
-        "popup-top close"
+        "popup-top popup-top"
         "call call"
-        "message message";
+        "message message"
+        "close close";
+    justify-content: center;
     opacity: 0;
     animation: fadeIn 0.5s ease-in-out forwards;
     transition: 0.5s ease-in-out;
@@ -157,7 +159,7 @@ body {
 
 .popup h3 {
     grid-area: popup-top;
-    text-align: right;
+    text-align: center;
     font-size: 2rem;
     line-height: 4;
     border-bottom: 1px solid #007DC5;
@@ -165,11 +167,7 @@ body {
 
 #close {
     grid-area: close;
-    height: 100%;
-    background: #FFF url("../images/SVGs/xmark.svg");
-    background-repeat: no-repeat;
-    background-position: 0% 50%;
-    background-size: contain;
+    background: #FFF;
 }
 
 .popup h4 {
@@ -823,12 +821,13 @@ input#navToggle~.navToggleLabel:active {
     .popup {
         width: auto;
         grid-template-areas:
-            "popup-top close"
-            "call message";
+            "popup-top popup-top"
+            "call message"
+            ". close";
     }
 
     #close {
-        background-size: 10%;
+        text-align: left;
     }
 
     .main {
