@@ -10,6 +10,16 @@ function closePopup() {
     popup.style.display = "none";
 }
 
+function openSearch() {
+    const search = document.getElementById("search-bar");
+    search.style.display = "flex";
+}
+
+function closeSearch() {
+    const search = document.getElementById("search-bar");
+    search.style.display = "none";
+}
+
 function toggleCards(cardClass) {
     const toggleButton = document.getElementById(`${cardClass}ToggleBtn`);
     const hiddenElements = document.querySelectorAll(`.${cardClass}-hidden`);

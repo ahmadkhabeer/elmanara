@@ -14,10 +14,7 @@
         <!--
         <input type="checkbox" id="searchToggle" class="searchToggle" />
         <label for="searchToggle" class="searchToggleLabel"></label>
-        <form action="" class="search">
-          <input type="text" placeholder="ابحث" class="search-field" />
-          <button type="button" class="search-btn"><span>ابحث</span></button>
-        </form>
+        
       -->
         <!--
         <input type="checkbox" id="navToggle" class="navToggle" />
@@ -39,7 +36,7 @@
           <button id="contact-us" onclick="openPopup()" title="تواصل معنا">
             <span>تواصل معنا</span>
           </button>
-          <button id="search" title="ابحث في الموقع">
+          <button id="search" onclick="openSearch()" title="ابحث في الموقع">
             <span>ابحث في الموقع</span>
           </button>
           <button id="menu" title="القائمة">
@@ -98,6 +95,10 @@
             </ul>
           </div>
         </div>
+          <form action="" class="search-bar" id="search-bar">
+            <input type="text" placeholder="ابحث" class="search-field" />
+            <button type="button" class="close-search" onclick="closeSearch()"><span></span></button>
+          </form>
       </header>
       <main class="main">
         <h2 class="page-title">
