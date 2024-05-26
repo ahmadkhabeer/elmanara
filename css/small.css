@@ -717,6 +717,14 @@ input#navToggle~.navToggleLabel:active {
         height: 8rem;
     }
 
+    .search-bar {
+        padding-top: 30%;
+    }
+
+    .close-search {
+        width: 16%;
+    }
+
     .navbar {
         top: 8rem;
     }
