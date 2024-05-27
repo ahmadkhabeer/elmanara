@@ -1,12 +1,12 @@
 const searchBar = document.getElementsByClassName('.search');
 
 function openPopup() {
-    const popup = document.getElementById("popup");
-    popup.style.display = "grid";
+    const popup = document.getElementById("contacts-window");
+    popup.style.display = "flex";
 }
 
 function closePopup() {
-    const popup = document.getElementById("popup");
+    const popup = document.getElementById("contacts-window");
     popup.style.display = "none";
 }
 
@@ -19,6 +19,37 @@ function closeSearch() {
     const search = document.getElementById("search-bar");
     search.style.display = "none";
 }
+
+function openNavbar() {
+    const navbar = document.getElementById("navbar");
+    navbar.style.display = "flex";
+}
+
+function closeNavbar() {
+    const navbar = document.getElementById("navbar");
+    navbar.style.display = "none";
+}
+
+const button = document.getElementById("menu");
+let isOn = false;
+
+button.addEventListener("click", function () {
+    const imageOn = "url('../images/SVGs/bars-active.svg')";
+    const imageOff = "url('../images/SVGs/bars.svg')";
+    isOn = !isOn;
+
+    if (isOn) {
+        button.style.backgroundImage = imageOn;
+        button.style.backgroundColor = "#007DC5";
+        openNavbar();
+    } else {
+        button.style.backgroundImage = imageOff;
+        button.style.backgroundColor = "#F2F2F2";
+        closeNavbar();
+    }
+
+    button.backgroundImage = isOn ? imageOn : imageOff;
+});
 
 function toggleCards(cardClass) {
     const toggleButton = document.getElementById(`${cardClass}ToggleBtn`);

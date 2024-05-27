@@ -11,16 +11,7 @@
     <div class="container">
       <header class="header">
         <a href="#" title="أكاديمية المنارة" id="logo"><span>المنارة</span></a>
-        <!--
-        <input type="checkbox" id="searchToggle" class="searchToggle" />
-        <label for="searchToggle" class="searchToggleLabel"></label>
-        
-      -->
-        <!--
-        <input type="checkbox" id="navToggle" class="navToggle" />
-        <label for="navToggle" class="navToggleLabel"></label>
-        -->
-        <nav class="navbar">
+        <nav class="navbar" id="navbar">
           <ul class="nav-menu">
             <li class="nav-item"><a href="#" class="nav-link">الرئيسية</a></li>
             <li class="nav-item"><a href="#" class="nav-link">نبذة عنا</a></li>
@@ -39,66 +30,70 @@
           <button id="search" onclick="openSearch()" title="ابحث في الموقع">
             <span>ابحث في الموقع</span>
           </button>
-          <button id="menu" title="القائمة">
+          <button id="menu" onclick="openNavbar()" title="القائمة">
             <span>القائمة</span>
           </button>
         </div>
-        <div class="popup" id="popup">
-          <h3>تواصل معنا</h3>
-          <button id="close" onclick="closePopup()">اغلاق</button>
-          <div id="call">
-            <h4>عبر الإتصال</h4>
-            <ul>
-              <li class="mobile" dir="ltr">
-                <a href="tel:+20100095028" title="+201000095028"
-                  ><span>(+2) 0100095028</span></a
-                >
-              </li>
-              <li class="phone" dir="ltr">
-                <a href="tel:+20862322221" title="+20862322221"
-                  ><span>(+2) 0862322221</span></a
-                >
-              </li>
-              <li class="mobile" dir="ltr">
-                <a href="tel:+20100095034" title="+201000095034"
-                  ><span>(+2) 0100095034</span></a
-                >
-              </li>
-            </ul>
-          </div>
-          <div id="message">
-            <h4>عبر الرسائل</h4>
-            <ul>
-              <li>
-                <a href="sms:+201000095028?body= " class="sms" title="SMS"
-                  ><span>SMS</span></a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://wa.me/+201000095028?text=Hello"
-                  target="_blank"
-                  class="whatsapp"
-                  title="WhatsApp"
-                  ><span>WhatsApp</span></a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://m.me/137394639659754"
-                  target="_blank"
-                  class="messenger"
-                  title="Messenger"
-                  ><span>Messenger</span></a
-                >
-              </li>
-            </ul>
+        <div id="contacts-window">
+          <div class="popup" id="popup">
+            <h3>تواصل معنا</h3>
+            <button id="close" onclick="closePopup()">اغلاق</button>
+            <div id="call">
+              <h4>عبر الإتصال</h4>
+              <ul>
+                <li class="mobile" dir="ltr">
+                  <a href="tel:+20100095028" title="+201000095028"
+                    ><span>(+2) 0100095028</span></a
+                  >
+                </li>
+                <li class="phone" dir="ltr">
+                  <a href="tel:+20862322221" title="+20862322221"
+                    ><span>(+2) 0862322221</span></a
+                  >
+                </li>
+                <li class="mobile" dir="ltr">
+                  <a href="tel:+20100095034" title="+201000095034"
+                    ><span>(+2) 0100095034</span></a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div id="message">
+              <h4>عبر الرسائل</h4>
+              <ul>
+                <li>
+                  <a href="sms:+201000095028?body= " class="sms" title="SMS"
+                    ><span>SMS</span></a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://wa.me/+201000095028?text=Hello"
+                    target="_blank"
+                    class="whatsapp"
+                    title="WhatsApp"
+                    ><span>WhatsApp</span></a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://m.me/137394639659754"
+                    target="_blank"
+                    class="messenger"
+                    title="Messenger"
+                    ><span>Messenger</span></a
+                  >
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-          <form action="" class="search-bar" id="search-bar">
-            <input type="text" placeholder="ابحث" class="search-field" />
-            <button type="button" class="close-search" onclick="closeSearch()"><span></span></button>
-          </form>
+        <form action="" class="search-bar" id="search-bar">
+          <input type="text" placeholder="ابحث" class="search-field" />
+          <button type="button" class="close-search" onclick="closeSearch()">
+            <span></span>
+          </button>
+        </form>
       </header>
       <main class="main">
         <h2 class="page-title">
