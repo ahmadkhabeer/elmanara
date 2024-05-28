@@ -831,10 +831,6 @@ body {
         border-bottom: 0;
     }
 
-    .navToggleLabel {
-        display: none;
-    }
-
     .navbar {
         position: static;
         width: auto;
@@ -842,10 +838,6 @@ body {
         margin-left: 2rem;
         display: flex;
         justify-content: flex-end;
-    }
-
-    .navbar::after {
-        display: none;
     }
 
     .navbar ul {
