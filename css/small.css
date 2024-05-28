@@ -315,7 +315,7 @@ body {
     list-style-type: none;
     width: 100%;
     height:fit-content;
-    padding: 0 8%;
+    padding: 0 7%;
     background-color: #FFF;
     background-size: contain;   
     display: flex;
@@ -335,7 +335,7 @@ body {
     width: 100%;
     padding: 2rem 1rem;
     font-size: 1.6rem;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 1.5;
 }
 
@@ -717,10 +717,6 @@ body {
         top: 8rem;
     }
 
-    .navbar ul li a {
-        font-size: 1.4rem;
-    }
-
     .main {
         margin-top: 8rem;
     }
@@ -759,7 +755,6 @@ body {
     }
 
     .navbar ul li a {
-        font-size: 1.6rem;
         padding: 2rem 0.5rem;
     }
 
