@@ -316,10 +316,10 @@ body {
 .navbar ul {
     list-style-type: none;
     width: 100%;
-    height:fit-content;
+    height: fit-content;
     padding: 0 7%;
     background-color: #FFF;
-    background-size: contain;   
+    background-size: contain;
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -719,6 +719,13 @@ body {
         top: 8rem;
     }
 
+    .popup {
+        grid-template-areas:
+            "popup-top popup-top"
+            "call message"
+            ". close";
+    }
+
     .main {
         margin-top: 8rem;
     }
@@ -758,14 +765,6 @@ body {
 
     .navbar ul li a {
         padding: 2rem 0.5rem;
-    }
-
-    .popup {
-        width: auto;
-        grid-template-areas:
-            "popup-top popup-top"
-            "call message"
-            ". close";
     }
 
     #close {
